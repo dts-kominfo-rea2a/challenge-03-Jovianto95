@@ -4,7 +4,7 @@ const dataBelanjaan = [
     id: "D-10001",
     nama: "Minyak Goreng Delima",
     harga: 25000,
-    kuantitas: 2,
+    kuantitas: 3,
   },
   {
     id: "D-10020",
@@ -21,15 +21,26 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
+const listBelanjaan = function (dataBelanjaan) {
+  listTotal = [];
+  for (let index = 0; index < dataBelanjaan.length; index++) {
+    listTotal[index] = '- ' + dataBelanjaan[index].nama + ' x ' + dataBelanjaan[index].kuantitas;
+  };
+  return listTotal;
+};
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+const totalBelanjaan = function (dataBelanjaan){
+  let totalHarga = 0;
+  for (index = 0; index < dataBelanjaan.length; index++){
+    totalHarga += dataBelanjaan[index].harga * dataBelanjaan[index].kuantitas;
+  }
+  return totalHarga;
+};
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
   console.log("Selamat datang customer");
-
   console.log("Belanjaan Anda adalah:");
   console.log(listBelanjaan?.(dataBelanjaan)?.join("\n"));
   console.log(
