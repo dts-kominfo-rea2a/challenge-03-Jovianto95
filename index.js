@@ -4,7 +4,7 @@ const dataBelanjaan = [
     id: "D-10001",
     nama: "Minyak Goreng Delima",
     harga: 25000,
-    kuantitas: 3,
+    kuantitas: 2,
   },
   {
     id: "D-10020",
@@ -21,19 +21,19 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = function (dataBelanjaan) {
-  listTotal = [];
-  for (let index = 0; index < dataBelanjaan.length; index++) {
-    listTotal[index] = '- ' + dataBelanjaan[index].nama + ' x ' + dataBelanjaan[index].kuantitas;
+const listBelanjaan = function (paramData) {
+  let listTotal = [];
+  for (index = 0; index < paramData.length; index++) {
+    listTotal[index] = '- ' + paramData[index].nama + ' x ' + paramData[index].kuantitas;
   };
   return listTotal;
 };
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = function (dataBelanjaan){
+const totalBelanjaan = function (paramData){
   let totalHarga = 0;
-  for (index = 0; index < dataBelanjaan.length; index++){
-    totalHarga += dataBelanjaan[index].harga * dataBelanjaan[index].kuantitas;
+  for (index = 0; index < paramData.length; index++){
+    totalHarga += paramData[index].harga * paramData[index].kuantitas;
   }
   return totalHarga;
 };
